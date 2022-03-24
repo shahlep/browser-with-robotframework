@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+browser/*
+venv/*
+.idea/*
+log.html
+output.xml
+report.html
+playwright-log.txt
