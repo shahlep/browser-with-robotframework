@@ -1,10 +1,11 @@
 *** Settings ***
 Documentation    Suite description
 Library          Browser
-Suite Setup      new browser   chromium    headless=false
-Suite Teardown   close browser
-Test Setup       new context    viewport={'width': 1024, 'height': 630}
-Test Teardown    close context
+Resource         resources.robot
+Suite Setup      create browser session
+Suite Teardown   close browser session
+Test Setup       create context for page
+Test Teardown    close context for page
 
 *** Test Cases ***
 Starting a browser with a page
