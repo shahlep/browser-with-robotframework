@@ -4,27 +4,35 @@ Library          Browser
 Resource         resources.robot
 Suite Setup      create browser session
 Suite Teardown   close browser session
-Test Setup       create context for page
-Test Teardown    close context for page
+
+
+*** Variables ***
+${error_message_text}   css=.error-message-container
 
 *** Test Cases ***
-Starting a browser with a page
-    Open a page with given url
+
+Validate Unsuccessful login
     Fill login form
-    Check page title
+    Wait until it checks and display error message
+    Verify error message is correct
 
 *** Keywords ***
-Open a page with given url
-    new page       https://www.saucedemo.com/
-    get title       ==    Swag Labs
 
 Fill login form
-    fill text    id=user-name   standard_user
-    fill text    id=password    secret_sauce
-    click        id=login-button
+    fill text    css=input#user-name   standard_user
+    fill text    css=input#password    secret
+    click        css=input#login-button
+
+Wait until it checks and display error message
+    wait for elements state    css=.error-message-container  visible
+
+Verify error message is correct
+    ${error_text}=  get text      ${error_message_text}
+    should be equal as strings    ${error_text}     Epic sadface: Username and password do not match any user in this service
 
 Check page title
     get title    ==     Swag Labs
+
 
 
 
