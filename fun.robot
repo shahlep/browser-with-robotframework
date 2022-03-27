@@ -10,7 +10,7 @@ Open url and search keyword
 
 *** Keywords ***
 Open Browser for url
-    new browser   chromium    headless=false
+    new browser   chromium    headless=true
     new context    viewport={'width': 1024, 'height': 630}
     new page       https://marketsquare.github.io/robotframework-browser/Browser.html
 
