@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Suite description
+Documentation    Fun with browser library
 Library          Browser
 
 *** Test Cases ***
