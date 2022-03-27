@@ -24,8 +24,8 @@ jobs:
       - run: npm install
     - name: Install dependencies
       run: |
-        python -m pip3 install --upgrade pip3
-        python -m pip3 install robotframework-browser
+        python -m pip install --upgrade pip
+        python -m pip install robotframework-browser
         python -m rfbrowser init
     - name: Test with robot
       run: |
