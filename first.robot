@@ -25,7 +25,9 @@ Validate Unsuccessful login
     Fill login form     ${username}     ${password}
     Wait until it checks and display error message
     Verify error message is correct
+    Check page title
     Check user defined library and keyword works
+
 
 Fill login form
     [Arguments]    ${username}      ${passowrd}

@@ -1,9 +1,9 @@
-from robot.api.deco import library , keyword
+from robot.api.deco import library, keyword
+
 
 @library
 class Fun:
-    #def __init__(self):
-
+    # def __init__(self):
 
     @keyword
     def hi_everyone(self):
