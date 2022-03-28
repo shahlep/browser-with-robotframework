@@ -29,4 +29,4 @@ jobs:
         python -m Browser.entry init
     - name: Test with robot
       run: |
-        robot fun.robot
+        robot first.robot

@@ -5,7 +5,7 @@ Library          Browser
 
 *** Keywords ***
 Create browser session
-    new browser   chromium    headless=false
+    new browser   chromium    headless=true
     new context    viewport={'width': 1024, 'height': 630}
     new page       https://www.saucedemo.com/
     get title       ==    Swag Labs

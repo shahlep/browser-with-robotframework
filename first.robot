@@ -2,25 +2,33 @@
 Documentation    Suite description
 Library          Browser
 Resource         resources.robot
-Suite Setup      create browser session
-Suite Teardown   close browser session
-
+Test Setup       create browser session
+Test Teardown    close browser session
+Test Template    Validate Unsuccessful login
 
 *** Variables ***
 ${error_message_text}   css=.error-message-container
 
-*** Test Cases ***
+*** Test Cases ***                USERNAME         PASSWORD
+Invalid User Name                 invalid          secret_sauce
+Invalid Password                  standard_user    invalid
+Invalid User Name and Password    invalid          invalid
+#Empty User Name                                    secret_sauce
+#Empty Password                    standard_user
+#Empty User Name and Password
 
+
+*** Keywords ***
 Validate Unsuccessful login
-    Fill login form
+    [Arguments]    ${username}      ${password}
+    Fill login form     ${username}     ${password}
     Wait until it checks and display error message
     Verify error message is correct
 
-*** Keywords ***
-
 Fill login form
-    fill text    css=input#user-name   standard_user
-    fill text    css=input#password    secret
+    [Arguments]    ${username}      ${passowrd}
+    fill text    css=input#user-name   ${username}
+    fill text    css=input#password    ${passowrd}
     click        css=input#login-button
 
 Wait until it checks and display error message
