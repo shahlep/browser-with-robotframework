@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Suite description
 Library          Browser
+Library          Fun.py
 Resource         resources.robot
 Test Setup       create browser session
 Test Teardown    close browser session
@@ -24,6 +25,7 @@ Validate Unsuccessful login
     Fill login form     ${username}     ${password}
     Wait until it checks and display error message
     Verify error message is correct
+    Check user defined library and keyword works
 
 Fill login form
     [Arguments]    ${username}      ${passowrd}
@@ -40,6 +42,9 @@ Verify error message is correct
 
 Check page title
     get title    ==     Swag Labs
+
+Check user defined library and keyword works
+    hi everyone
 
 
 
