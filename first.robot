@@ -41,8 +41,10 @@ Wait until it checks and display error message
 
 Verify error message is correct
     ${error_text}=  get text      ${error_message_text}
-    should be equal as strings    ${error_text}     Epic sadface: Username and password do not match any user in this service
 
+      should be equal as strings  ${error_text}     Epic sadface: Username and password do not match any user in this service
+      #should be equal as strings    ${error_text}  Epic sadface: Password is required
+      #should be equal as strings   ${error_text}  Epic sadface: Username is required
 Check page title
     get title    ==     Swag Labs
 
