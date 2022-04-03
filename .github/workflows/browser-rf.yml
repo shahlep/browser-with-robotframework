@@ -24,6 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install robotframework-browser
+        python -m pip install robotframework-datadriver
         python -m Browser.entry init
     - name: Test with robot
       run: |
