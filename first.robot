@@ -2,6 +2,7 @@
 Documentation    Suite description
 Library          Browser
 Library          Fun.py
+Library          DataDriver             file=login_data.csv     encoding=utf_8      dialect=unix
 Resource         resources.robot
 Test Setup       create browser session
 Test Teardown    close browser session
@@ -10,14 +11,8 @@ Test Template    Validate Unsuccessful login
 *** Variables ***
 ${error_message_text}   css=.error-message-container
 
-*** Test Cases ***                USERNAME         PASSWORD
-Invalid User Name                 invalid          secret_sauce
-Invalid Password                  standard_user    invalid
-Invalid User Name and Password    invalid          invalid
-Empty User Name                   ''               secret_sauce
-Empty Password                    standard_user     ''
-Empty User Name and Password      ''               ''
-
+*** Test Cases ***
+Login with user ${username} and password ${password}
 
 *** Keywords ***
 Validate Unsuccessful login
@@ -45,11 +40,13 @@ Verify error message is correct
       should be equal as strings  ${error_text}     Epic sadface: Username and password do not match any user in this service
       #should be equal as strings    ${error_text}  Epic sadface: Password is required
       #should be equal as strings   ${error_text}  Epic sadface: Username is required
+
 Check page title
     get title    ==     Swag Labs
 
 Check user defined library and keyword works
     hi everyone
+
 
 
 

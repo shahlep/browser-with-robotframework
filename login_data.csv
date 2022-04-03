@@ -1,0 +1,7 @@
+*** Test Cases ***,${username},${password}
+Invalid User Name,invalid,secret_sauce
+Invalid Password,standard_user,invalid
+Invalid User Name and Password,invalid,invalid
+Empty User Name,'',secret_sauce
+Empty Password,standard_user,''
+Empty User Name and Password,'',''
