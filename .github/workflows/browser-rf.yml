@@ -27,6 +27,9 @@ jobs:
         rfbrowser clean-node
         python -m pip install robotframework-datadriver
         python -m Browser.entry init
+        python -m pip install playwright
+        python -m playwright install
+        python -m playwright install-deps
     - name: Test with robot
       run: |
         robot first.robot
