@@ -26,6 +26,7 @@ jobs:
         python -m pip install robotframework-browser
         python -m pip install robotframework-datadriver
         python -m Browser.entry init
+        python -m playwright install-deps
     - name: Test with robot
       run: |
         robot first.robot
