@@ -5,4 +5,6 @@ Invalid User Name and Password,invalid,invalid
 Empty User Name,'',secret_sauce
 Empty Password,standard_user,''
 Empty User Name and Password,'',''
-Special Characters,!"#€%,?=)(/
+Special Characters,!"#€%,?=)(/,
+Nordic Username,åöäåå,secret_sauce
+Nordic Password,standard_user,åöäåå
