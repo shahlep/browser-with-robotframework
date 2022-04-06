@@ -8,3 +8,5 @@ Empty User Name and Password,'',''
 Special Characters,!"#€%,?=)(/,
 Nordic Username,åöäåå,secret_sauce
 Nordic Password,standard_user,åöäåå
+Number Username,123456,secret_sauce
+Number Password,standard_user,123456
